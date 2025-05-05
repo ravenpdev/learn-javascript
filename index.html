@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+  <p>Before the script...</p>
+
+  <script>
+    alert('hello world');
+  </script>
+
+  <script src="./index.js">
+    // the content is ignored, because src is set.
+    console.log("this will be ignored");
+  </script>
+
+  <script>
+    alert("I'm Javascript");
+  </script>
+
+  <script src="./task1.js"></script>
+</body>
+
+</html>
