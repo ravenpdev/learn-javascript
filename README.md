@@ -1,0 +1,3 @@
+resources:
+
+- https://javascript.info
