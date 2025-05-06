@@ -5,3 +5,4 @@ console.log(undefined == null); // true
 console.log(undefined === null); // false
 console.log(null == "\n0\n"); // false
 console.log(null === +"\n0\n"); // false
+
