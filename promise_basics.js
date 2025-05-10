@@ -4,7 +4,7 @@
 // The function passed to new Promise() is called the executor. When new Promise is created, the executor runs automatically. It contains the producing code which should eventually product the result. 
 // 
 //
-// The promise object returned by the new Promise constructor has these intternal properties:
+// The promise object returned by the new Promise constructor has these internal properties:
 // state - initially "pending", then changes to either "fullfilled" when resolve is called or "rejected" when reject is called.
 // result - initially undefined, then changes to value when resolve(value) is called or error when reject(error) is called.
 
