@@ -248,18 +248,46 @@ function sumInput() {
 }
 
 /**
- * @param {Array.<number>} values
+ * @param {Array.<number>} arr
  */
-function getMaxSubSum(values) {
-  let contiguous = [];
+function getMaxSubSum(arr) {
+  let maxSum = 0;
 
-  for (let i = 0; i < values.length; i++) {
-    for (let x = i + 1; x < values.length + 1; x++) {
-      contiguous.push(values.slice(i, x).reduce((prev, current) => prev + current, 0));
+  for (let i = 0; i < arr.length; i++) {
+    let sumFixedStart = 0;
+    for (let j = i; j < arr.length; j++) {
+      sumFixedStart += arr[j];
+      maxSum = Math.max(maxSum, sumFixedStart);
     }
   }
 
-  return Math.max(...contiguous);
+  return maxSum;
+
+  // let contiguous = [];
+  //
+  // for (let i = 0; i < values.length; i++) {
+  //   for (let x = i; x < values.length + 1; x++) {
+  //     contiguous.push(values.slice(i, x).reduce((prev, current) => prev + current, 0));
+  //   }
+  // }
+  //
+  // return Math.max(...contiguous);
+}
+
+/**
+ * @param {Array.<number>} arr
+ */
+function getMaxSubSum2(arr) {
+  let maxSum = 0;
+  let partialSum = 0;
+
+  for (let item of arr) {
+    partialSum += item;
+    maxSum = Math.max(maxSum, partialSum);
+    if (partialSum < 0) partialSum = 0;
+  }
+
+  return maxSum;
 }
 
 // A maximal subarray
@@ -270,4 +298,11 @@ function getMaxSubSum(values) {
   console.log(getMaxSubSum([-2, -1, 1, 2]));
   console.log(getMaxSubSum([100, -9, 2, -3, 5]));
   console.log(getMaxSubSum([1, 2, 3]));
+
+  console.log(getMaxSubSum2([-1, 2, 3, -9]));
+  console.log(getMaxSubSum2([2, -1, 2, 3, -9]));
+  console.log(getMaxSubSum2([-1, 2, 3, -9, 11]));
+  console.log(getMaxSubSum2([-2, -1, 1, 2]));
+  console.log(getMaxSubSum2([100, -9, 2, -3, 5]));
+  console.log(getMaxSubSum2([1, 2, 3]));
 }
