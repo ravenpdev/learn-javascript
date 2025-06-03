@@ -32,20 +32,20 @@ console.log((123456).toString(36)); // could be written as (123456).toString()
 //
 // 1. Multiply and divide.
 {
-  let num = 1.23456;
-  console.log(Math.round(num * 100) / 100);
+	let num = 1.23456;
+	console.log(Math.round(num * 100) / 100);
 }
 // 2. The method toFixed(n) roudns the number to n digits after the point and returns a string.
 // This rounds up or down to the nearest value, similar to Math.round
 {
-  let num = 12.34;
-  let result = num.toFixed(1);
-  console.log(typeof result);
-  console.log(num.toFixed(1));
+	let num = 12.34;
+	let result = num.toFixed(1);
+	console.log(typeof result);
+	console.log(num.toFixed(1));
 
-  // Please not that the result of toFixed is a string. If the decimal part is shorter than required, zeroes are appended to the end:
-  let n = 12.34;
-  console.log(n.toFixed(5));
+	// Please not that the result of toFixed is a string. If the decimal part is shorter than required, zeroes are appended to the end:
+	let n = 12.34;
+	console.log(n.toFixed(5));
 }
 
 // Imprecise calculations
@@ -54,19 +54,19 @@ console.log((123456).toString(36)); // could be written as (123456).toString()
 //
 // If a number is really huge, it may overflow the 64-bit storage and become a special numeric value Infinity
 {
-  console.log(1e500);
+	console.log(1e500);
 
-  console.log(0.1 + 0.2 == 0.3); // false
-  console.log(0.1 + 0.2);
-  console.log(+(0.1 + 0.2).toFixed(2) === 0.3);
+	console.log(0.1 + 0.2 == 0.3); // false
+	console.log(0.1 + 0.2);
+	console.log(+(0.1 + 0.2).toFixed(2) === 0.3);
 }
 
 // Try running this
 {
-  // Hello! I'm a self-increasing number!
-  console.log(9999999999999999);
-  let value = 9999999999999999;
-  console.log(typeof value);
+	// Hello! I'm a self-increasing number!
+	console.log(9999999999999999);
+	let value = 9999999999999999;
+	console.log(typeof value);
 }
 // Tests: isFinite and isNaN
 //
@@ -76,43 +76,43 @@ console.log((123456).toString(36)); // could be written as (123456).toString()
 
 // isNaN(value) converts its argument to a number and then tests it for being NaN:
 {
-  console.log(isNaN(NaN));
-  console.log(isNaN("str"));
+	console.log(isNaN(NaN));
+	console.log(isNaN("str"));
 
-  // The value NaN is unique in that it does not equal to anything, including itself:
-  console.log(NaN === NaN);
+	// The value NaN is unique in that it does not equal to anything, including itself:
+	console.log(NaN === NaN);
 }
 
 // isFinite(value) converts its argument to a number and return true if it's a regular number, not NaN/Infinity/-Infinity:
 {
-  console.log(isFinite("15"));
-  console.log(isFinite("str"));
-  console.log(isFinite(Infinity));
+	console.log(isFinite("15"));
+	console.log(isFinite("str"));
+	console.log(isFinite(Infinity));
 
-  // Sometimes isFinite is used to validate whether a string value is a regular number:
-  // let num = +prompt("Enter a number", "");
-  // console.log(isFinite(num));
+	// Sometimes isFinite is used to validate whether a string value is a regular number:
+	// let num = +prompt("Enter a number", "");
+	// console.log(isFinite(num));
 }
 
 // Number.isNan and Number.isFinite
 //
 // are the more "strict" version of isNaN and isFinite functions. They do not autoconvert their arguments into a number, but check if it belongs to the number type instead.
 {
-  console.log(Number.isNaN(NaN));
-  console.log(Number.isNaN("str" / 2));
+	console.log(Number.isNaN(NaN));
+	console.log(Number.isNaN("str" / 2));
 
-  // Note the difference:
-  console.log(Number.isNaN("str")); // false, because "str" belongs to the string type
-  console.log(isNaN("str")); // true, because isNaN converts string "str" into a number and gets NaN as
+	// Note the difference:
+	console.log(Number.isNaN("str")); // false, because "str" belongs to the string type
+	console.log(isNaN("str")); // true, because isNaN converts string "str" into a number and gets NaN as
 
-  // Number.isFinite(value) returns true if the argument belongs to the number type and it is not NaN/Infinity/-Infinity. In any other ase, it returns false.
-  console.log(Number.isFinite(123)); // true
-  console.log(Number.isFinite(Infinity)); // false
-  console.log(Number.isFinite(2 / 0)); // false
+	// Number.isFinite(value) returns true if the argument belongs to the number type and it is not NaN/Infinity/-Infinity. In any other ase, it returns false.
+	console.log(Number.isFinite(123)); // true
+	console.log(Number.isFinite(Infinity)); // false
+	console.log(Number.isFinite(2 / 0)); // false
 
-  // Note the difference:
-  console.log(Number.isFinite("123")); // false
-  console.log(isFinite("123")); // true
+	// Note the difference:
+	console.log(Number.isFinite("123")); // false
+	console.log(isFinite("123")); // true
 }
 
 // Comparison with Object.is
@@ -125,21 +125,21 @@ console.log((123456).toString(36)); // could be written as (123456).toString()
 // parseInt and parseFloat
 // Numberic conversion using a plus + or Number() is strict. If a value is not exactly a number, it fails:
 {
-  console.log(+"100px"); // NaN
+	console.log(+"100px"); // NaN
 
-  // parseInt and parseFloat read a number from a string until they can't. In case of an error, the gathered number is returned. The function parseInt returns an integer, whilst parseFloat will return a floating-point number:
-  console.log(parseInt("100px"));
-  console.log(parseFloat("12.5em"));
-  console.log(parseInt("12.3"));
-  console.log(parseFloat("12.3.4"));
+	// parseInt and parseFloat read a number from a string until they can't. In case of an error, the gathered number is returned. The function parseInt returns an integer, whilst parseFloat will return a floating-point number:
+	console.log(parseInt("100px"));
+	console.log(parseFloat("12.5em"));
+	console.log(parseInt("12.3"));
+	console.log(parseFloat("12.3.4"));
 
-  // There are situations when parseInt/parseFloat will return NaN. it happens when no digits could be read:
-  console.log(parseInt("a1234"));
+	// There are situations when parseInt/parseFloat will return NaN. it happens when no digits could be read:
+	console.log(parseInt("a1234"));
 
-  // The second argument of parseInt(str, radix)
-  console.log(parseInt("0xff", 16)); // 255
-  console.log(parseInt("ff", 16)); // 255, without 0x also works
-  console.log(parseInt("2n9c", 36)); // 123456
+	// The second argument of parseInt(str, radix)
+	console.log(parseInt("0xff", 16)); // 255
+	console.log(parseInt("ff", 16)); // 255, without 0x also works
+	console.log(parseInt("2n9c", 36)); // 123456
 }
 
 // Other math functions
@@ -147,16 +147,16 @@ console.log((123456).toString(36)); // could be written as (123456).toString()
 // Math.random()
 // Return a random number from 0 to 1 (not including 1)
 {
-  console.log(Math.random());
-  console.log(Math.random());
-  console.log(Math.round(Math.random() * 9) + 1);
+	console.log(Math.random());
+	console.log(Math.random());
+	console.log(Math.round(Math.random() * 9) + 1);
 }
 
 // Math.max(a, b, c...) and Math.min(a, b, c...)
 // Returns thte greatestt and smallest from the arbitrary number of arguments
 {
-  console.log(Math.max(3, 5, -10, 0, 1));
-  console.log(Math.min(1, 2));
+	console.log(Math.max(3, 5, -10, 0, 1));
+	console.log(Math.min(1, 2));
 }
 
 // Math.pow(n, power)
@@ -197,11 +197,11 @@ console.log(Math.pow(2, 10));
 
 // A random integer from min to max
 {
-  const randomInteger = (min, max) => {
-    let rand = min + Math.random() * (max + 1 - min);
+	const randomInteger = (min, max) => {
+		let rand = min + Math.random() * (max + 1 - min);
 
-    return Math.floor(rand);
-  };
+		return Math.floor(rand);
+	};
 
-  console.log(randomInteger(1, 5));
+	console.log(randomInteger(1, 5));
 }

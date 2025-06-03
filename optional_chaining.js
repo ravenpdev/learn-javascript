@@ -17,13 +17,12 @@ let x = 0;
 user?.sayHi(x++);
 console.log(x);
 
-
 // The optional chaining ?. is not an operator, but a special syntax construct, that also works with functions and square brackets.
 
 let userAdmin = {
   admin() {
     console.log("I am admin");
-  }
+  },
 };
 let userGuest = {};
 userAdmin.admin?.(); // I am admin
@@ -31,7 +30,7 @@ userGuest.admin?.(); // nothing happens (no such method)
 
 let key = "firstName";
 let user1 = {
-  firstName: "John"
+  firstName: "John",
 };
 let user2 = null;
 console.log(user1?.[key]); // John
@@ -39,8 +38,10 @@ console.log(user2?.[key]); // undefined
 
 delete user?.name; // delete user.name if user exists.
 
-
 // We can use ?. for safe reading and deleting, but not writing
 let user3 = null;
 user3?.name = "John"; // Error, doesn't work
 // because it evaluates to: undefined = "John"
+
+// Summary
+// The optional chaining ?. syntax has three forms:

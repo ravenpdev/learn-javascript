@@ -36,7 +36,7 @@ range[Symbol.iterator] = function () {
 for (const num of range) {
 	console.log(num);
 }
-// Please note the core feature of iterables: separation of conerns
+// Please note the core feature of iterables: separation of concerns
 //
 // The range itself does not have the next() method.
 // Instead, another object, a so-called "iterator" is created by the call to range[Symbol.iterator](), and its next() generate values for the iteration.

@@ -19,7 +19,7 @@ checkAge(
 
 
 function loadScript(src, callback) {
-  if (src) {
+    if (src) {
     callback(null, src);
   } else {
     callback(new Error('Woopsie'), src);

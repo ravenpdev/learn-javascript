@@ -8,9 +8,30 @@
 
 <body>
 
+  <!-- <iframe sandbox="allow-same-origin" id="#video"></iframe> -->
 
-  <script>
-    let name = "hello";
+  <script type="module">
+    /*
+      navigator.getUserMedia = (navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia);
+  
+      navigator.mediaDevices
+        .getUserMedia({
+          video: {
+            facingMode: "user"
+          },
+        })
+        .then((stream) => {
+          const video = document.querySelector("#video");
+          video.srcObject = stream;
+          video.onloadedmetadata = () => {
+            video.play();
+          }
+        })
+        .catch(err => console.log(err.name, err.message));
+        */
+
+    // import {capitalize} from './helpers.js';
+    // document.body.innerHTML = capitalize("raven");
   </script>
 </body>
 

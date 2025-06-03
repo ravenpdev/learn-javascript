@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 // Javascript is dynamically typed, meaning that there exist data types, but variables are not bound to any of them.
 
 let message = "hello";

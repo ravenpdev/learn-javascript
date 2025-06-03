@@ -3,7 +3,7 @@
 
 // The whole thing works, because every call to a .then return a new promise, so that we can call the next .then on it.
 new Promise((resolve, reject) => {
-   setTimeout(() => resolve(1), 1000); 
+  setTimeout(() => resolve(1), 1000);
 }).then(result => {
   console.log(result);
   return result * 2;
@@ -70,6 +70,7 @@ new Promise((resolve, reject) => {
 class Thenable {
   constructor(num) {
     this.num = null;
+    skdjfksdj
   }
 
   then(resolve, reject) {
@@ -80,19 +81,20 @@ class Thenable {
 }
 
 new Promise(resolve => resolve(1))
-.then(result => {
-  return new Thenable(result);
-})
-.then(console.log);
+  .then(result => {
+    return new Thenable(result);
+  })
+  .then(console.log);
 
 
 new Promise((resolve, reject) => {
   setTimeout(() => reject(new Error("Woopsies!")), 1000);
 })
-.catch((err) => {
-  return new Promise((resolve, reject) => {
+  .catch((err) => {
+    return new Promise((resolve, reject) => {
       console.log(err)
       resolve("nice!")
-  });
-})
-.then(msg => console.log(msg));
+    });
+  })
+  .then(msg => console.log(msg));
+

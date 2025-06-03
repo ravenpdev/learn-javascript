@@ -15,8 +15,8 @@ console.log(user === admin);
 // Const object can be modified
 //
 // it must always reference the same object, but properties of that object are free to change.
-  name: "John"
 const john = {
+name: "John"
 };
 john.name = "John Doe";
 // john = {}; // TypeError: Assignment to constant variable.
